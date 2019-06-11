@@ -38,12 +38,13 @@ using std::endl;
 void push_back_elem_to_vector();
 void subscript();
 vector<int> getRow(int rowIndex);
+void init_vector();
 
 int main(int argc, const char * argv[]) {
 
-//    push_back_elem_to_vector();
-//    subscript();
-    
+    push_back_elem_to_vector();
+    subscript();
+    init_vector();
     vector<int> ret = getRow(3);
     
     return 0;
@@ -91,6 +92,9 @@ void init_vector()
     // 创建 指定初始值 指定数量 的元素
     vector<int> ivec(10, -1); // 10个int类型的元素，每个元素都被初始化为-1.
     vector<string> str_vec(10, "Hi"); // 10个string类型的元素，每个元素都被初始化为 "Hi".
+    
+    vector<int> v7{10};
+    vector<string> v8(10);
     
 }
 
@@ -140,20 +144,23 @@ void push_back_elem_to_vector()
 {
     vector<int> iv; // 空vector对象
     
-    for (int i = 0 ; i != 100; i++) {
+    for (int i = 0 ; i != 10; i++) {
         iv.push_back(i); // 依次把整数的值放到vector的尾端
     }
-    // 循环结束后iv有100个元素，值0~99。
     
-    string world;
-    vector<string> text_v;
+    iv.insert(iv.begin(), 100);
     
-    while (cin >> world) {
-        text_v.push_back(world);
+    for (int num : iv) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; iv.empty() == false; i++) {
+        iv.pop_back();
     }
     
-    for (string s : text_v) {
-        cout << s << " ";
+    for (int num : iv) {
+        cout << num << " ";
     }
     cout << endl;
     
