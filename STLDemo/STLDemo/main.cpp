@@ -9,12 +9,14 @@
 #include <iostream>
 
 #include "priorityQueue.hpp"
+#include "set.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     
     
     priority_queue_entry();
+//    set_entry();
     
     return 0;
 }
